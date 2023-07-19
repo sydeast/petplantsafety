@@ -61,16 +61,16 @@ class Scraper
             # else
             #     toxicity = false
             # end
-            if isToxic.include?("Non-Toxic to Dogs")
-                toxic_dogs = false
-            else
-                toxic_dogs = true
-            end
-            if isToxic.include?("Non-Toxic to Horses")
-                    toxic_horses = false
-                else
-                    toxic_horses = true
-            end
+            # if isToxic.include?("Non-Toxic to Dogs")
+            #     toxic_dogs = false
+            # else
+            #     toxic_dogs = true
+            # end
+            # if isToxic.include?("Non-Toxic to Horses")
+            #         toxic_horses = false
+            #     else
+            #         toxic_horses = true
+            # end
             
             if isToxic.include?("Non-Toxic to Cats")
                 toxic_cats = false
@@ -78,7 +78,7 @@ class Scraper
                 toxic_cats = true
             end
 
-            if toxic_cats = true || toxic_dogs = true || toxic_horses = true
+            if toxic_cats == true
                     toxicity = true
             else
                 toxicity = false
@@ -94,8 +94,8 @@ class Scraper
                 toxicity: toxicity,
                 clinical_signs: clinical_signs,
                 toxic_cats: toxic_cats,
-                toxic_dogs: toxic_dogs,
-                toxic_horses: toxic_horses,
+                # toxic_dogs: toxic_dogs,
+                # toxic_horses: toxic_horses,
                 toxic_to: isToxic
             }
 
