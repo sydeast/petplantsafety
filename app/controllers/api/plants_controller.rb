@@ -1,4 +1,4 @@
-class PlantsController < ApplicationController
+class API::PlantsController < ApplicationController
   before_action :set_plant, only: %i[ show update destroy ]
 
   # GET /plants
@@ -46,6 +46,6 @@ class PlantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def plant_params
-      params.fetch(:plant, {name, additional_names, family, scientific_name, toxic_principles, clinical_signs, toxicity, toxic_cats, toxic_dogs, toxic_horses, toxic_to})
+      params.require(:plant.permit(name, additional_names, family, scientific_name, toxic_principles, clinical_signs, toxicity, toxic_cats, toxic_dogs, toxic_horses, toxic_to))
     end
 end
