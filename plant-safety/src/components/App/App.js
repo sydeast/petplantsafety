@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from '../SearchBar/search';
 
 function App() {
   return (
@@ -9,6 +10,13 @@ function App() {
       <p>This is just a placement</p>
     </div>
       </header>
+
+    <body>
+    <div>
+        <SearchBar details={}/>
+      </div>
+    </body>
+      
     </div>
   );
 }
