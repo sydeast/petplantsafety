@@ -33,6 +33,13 @@ class API::PlantsController < ApplicationController
     end
   end
 
+  def search
+    key = "%" + params[:q] + "%"
+    # key = "%" + params[:q]
+    @plants = Plant.where("name LIKE ? or additional_names LIKE ? or scientific_name LIKE ?", key, key, key)
+    render json: @plants
+  end
+
   # DELETE /plants/1
   def destroy
     @plant.destroy

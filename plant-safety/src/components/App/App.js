@@ -11,11 +11,12 @@ function App() {
     </div>
       </header>
 
-    <body>
+    <div className="App-body">
     <div>
-        <SearchBar details={}/>
+<p>something or other until i get this fucker working</p>
+<SearchBar />
       </div>
-    </body>
+    </div>
       
     </div>
   );

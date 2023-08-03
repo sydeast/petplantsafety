@@ -6,6 +6,7 @@ gem 'rack'
 gem 'rspec', '~>3.7.0'
 gem 'open-uri'
 gem 'pry'
+gem'rack-cors'
 
 ruby "3.2.2"
 
