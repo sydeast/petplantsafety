@@ -3,6 +3,9 @@ import './App.css';
 import SearchBar from '../SearchBar/search';
 
 function App() {
+ const componentDidMount=() => {
+    this.props.fetchPlants();
+ }
   return (
     <div className="App">
       <header className="App-header">

@@ -9,21 +9,21 @@ export const fetchPlants = () => {
     }
 }
 
-export const searchPlants = plant => {
+export const searchPlants = plants => {
 
     return(dispatch) => {
         // debugger
-        return fetch(`http://127.0.0.1:3000/api/search?q=${plant.charAt(0).toUpperCase()+plant.slice(1).toLowerCase()}`, {
+        return fetch(`http://127.0.0.1:3000/api/search?q=${plants.charAt(0).toUpperCase()+plants.slice(1).toLowerCase()}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({plant})
+            body: JSON.stringify({plants})
         })
         .then(resp => resp.json())
-        .then(plant => {
-            console.log("plants", plant)
-            dispatch({ type: "FIND_PLANT", payload: plant })
+        .then(plants => {
+            console.log("plants", plants)
+            dispatch({ type: "FIND_PLANTS", payload: plants })
         })
     }
 }

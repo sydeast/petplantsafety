@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 const SearchList = (props) => {
 
-  debugger
   
-  if (!props.searchResults) {
+  
+  if (!props.results) {
     return null;
   }
 
@@ -16,7 +16,7 @@ const SearchList = (props) => {
   //     {filtered}
   //   </div>
   // );
-  return props.plants.map((plant) => {
+  return props.results.map((plant) => {
     return (
       <div className="plant-wrapper">
         <div className="flip-card">
@@ -37,7 +37,7 @@ const SearchList = (props) => {
 
 const mapStateToProps = state => {
   return {
-    plants: state
+    searchResults: state
   }
 }
 
