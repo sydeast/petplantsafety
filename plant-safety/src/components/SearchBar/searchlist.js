@@ -20,9 +20,9 @@ const SearchList = (props) => {
   return props.results.map((plant) => {
     return (
       <div className="plant-wrapper" key={plant.id}>
+        {/* <Link to="/plant/:plantID"><Card plant={plant}/></Link>  */}
    
-        {/* <strong> {plant.name} </strong> */}
-        <Card plant={plant} key={plant.id}>{plant.name}</Card>
+        <strong> {plant.name} </strong>
               
       </div>
 
