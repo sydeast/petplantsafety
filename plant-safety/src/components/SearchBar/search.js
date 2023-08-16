@@ -1,7 +1,7 @@
 import React, {Component, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { fetchPlants, searchPlants } from '../../actions/actions';
-import Searchlist from './searchlist';
+import Searchlist from './searchResultsList';
 
 class Search extends Component {
 
