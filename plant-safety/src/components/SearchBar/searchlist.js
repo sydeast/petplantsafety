@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../PlantCard/plantcard';
+import Card from '../Plants/plantcard';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 

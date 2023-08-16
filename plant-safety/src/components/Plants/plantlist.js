@@ -5,7 +5,7 @@ import { fetchPlants } from '../../actions/actions';
 import PlantInfo from './plantInfo';
 
 
-function AllPlants(props) {
+function AllPlants() {
  
  //const counter = useSelector((state) => state.counter)
 

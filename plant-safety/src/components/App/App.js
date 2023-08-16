@@ -1,14 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import SearchBar from '../SearchBar/search';
-import Card from '../PlantCard/plantcard';
+import Card from '../Plants/plantcard';
 import {BrowserRouter as Router, Route, Routes, Link, useMatches} from 'react-router-dom';
-import PlantInfo from '../PlantCard/plantInfo';
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPlants } from '../../actions/actions';
 import { useEffect, useState } from 'react';
-import Plantlist from '../PlantCard/plantlist';
-import plantlist from '../PlantCard/plantlist';
+import AllPlants from '../Plants/plantlist'
+import Navbar from '../Nav/header';
+import HomePage from '../Home/home';
 
 function App() {
   const dispatch = useDispatch();
@@ -26,17 +24,15 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div>
-          <p>This is just a placement</p>
+          <Navbar/>
         </div>
       </header>
 
       <div className="App-body">
-        <div className='search-component'>
-          <SearchBar />
-          <ul>
-            {/* <li><Link to='/search'>search</Link></li> */}
-          </ul>
+        <div className='home'>
+          <HomePage/>
         </div>
+
 
         <div className='all-list'>
           {/* <p>Click here to view a list of all plants.</p> */}
@@ -51,8 +47,7 @@ function App() {
             path="/plants/:plantID"
             render={({ match }) => <Card match={match} other="props" />}
           /> */}
-          <Route path='/plants' element={<Plantlist props={plantlist} />} />
-          
+          <Route path='/plants' element={<AllPlants />} />
         </Routes>
       </div>
       
