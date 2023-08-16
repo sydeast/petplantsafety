@@ -2,8 +2,8 @@ export const fetchPlants = () => {
     return(dispatch) => {
         return fetch(`http://127.0.0.1:3000/api/plants`)
         .then(resp => resp.json())
-        .then(plants => {
-            dispatch({ type: 'SET_PLANT', payload: plants})
+        .then(plantsList => {
+            dispatch({ type: 'SET_PLANT', payload: plantsList})
         })
         // .catch((error) => console.log('error', error));
     }

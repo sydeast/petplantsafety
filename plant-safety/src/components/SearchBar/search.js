@@ -1,7 +1,7 @@
 import React, {Component, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { fetchPlants, searchPlants } from '../../actions/actions';
-import Searchlist from './searchlist';
+import Searchlist from './searchResultsList';
 
 class Search extends Component {
 
@@ -30,8 +30,9 @@ class Search extends Component {
         e.preventDefault()
         this.props.searchPlants(this.state.searchTerm)
         this.handleToggleClick()
-    
     };
+
+    randomKey = Math.floor(Math.random() * 3000);
     
 
     render() {
@@ -58,11 +59,14 @@ class Search extends Component {
                         <input type="submit" value="search" />
                     </p>
                 </form>
+                {/* {{this.state.searchResults}.map(item => */}
                 <div className='resultsSearch'>
-                    <Searchlist results={this.props.plants.searchResults}/>
+                
+                    <Searchlist results={this.props.plants.searchResults} />
                 </div>
-
+                {/* )} */}
             </div>
+                
 
         );
         }

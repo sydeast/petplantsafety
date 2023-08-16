@@ -1,6 +1,7 @@
 import React from 'react';
-import Card from '../PlantCard/plantcard';
+import Card from '../Plants/plantcard';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 const SearchList = (props) => {
 
@@ -18,16 +19,12 @@ const SearchList = (props) => {
   // );
   return props.results.map((plant) => {
     return (
-      <div className="plant-wrapper">
-        <div className="flip-card">
-          <div className="flip-card-inner">
-            <div className="flip-card-front">
-              <strong> {plant.name} </strong>
-            </div>
-
-            </div>
-          </div>
-        </div>
+      <div className="plant-wrapper" key={plant.id}>
+        {/* <Link to="/plant/:plantID"><Card plant={plant}/></Link>  */}
+   
+        <strong> {plant.name} </strong>
+              
+      </div>
 
     )
   }
