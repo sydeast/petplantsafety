@@ -7,6 +7,8 @@ import { useEffect, useState } from 'react';
 import AllPlants from '../Plants/plantlist'
 import Navbar from '../Nav/header';
 import HomePage from '../Home/home';
+import plantlist from '../Plants/plantlist';
+import SearchPage from '../SearchBar/searchPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -30,7 +32,7 @@ function App() {
 
       <div className="App-body">
         <div className='home'>
-          <HomePage/>
+          <p>osdjsojf</p>
         </div>
 
 
@@ -47,7 +49,9 @@ function App() {
             path="/plants/:plantID"
             render={({ match }) => <Card match={match} other="props" />}
           /> */}
-          <Route path='/plants' element={<AllPlants />} />
+          <Route path='/plants' element={<AllPlants props={plantlist}/>} />
+          <Route path='/search' element={<SearchPage/>} />
+          <Route path='/' element={<HomePage/>} />
         </Routes>
       </div>
       
