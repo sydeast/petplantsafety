@@ -5,7 +5,6 @@ import { useParams, useLocation, Link } from 'react-router';
 
 function Card(props) {
   const location = useLocation()
-  console.log(location.state.plant.listedPlant)
   let plantInfo = location.state.plant.listedPlant
 
 
@@ -17,8 +16,6 @@ function Card(props) {
       <div>
         {/* <p>{plant}</p> */}
         <PlantInfo plant={plantInfo}/>
-        shit else
-
       </div>
     </div>
   );

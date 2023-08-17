@@ -22,7 +22,6 @@ export const searchPlants = plants => {
         })
         .then(resp => resp.json())
         .then(plants => {
-            console.log("plants", plants)
             dispatch({ type: "FIND_PLANTS", payload: plants })
         })
     }

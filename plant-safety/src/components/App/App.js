@@ -10,6 +10,7 @@ import HomePage from '../Home/home';
 import plantlist from '../Plants/plantlist';
 import listedPlant from '../Plants/plantcard'
 import SearchPage from '../SearchBar/searchPage'
+import Error from '../Error/error'
 
 function App() {
   const dispatch = useDispatch();
@@ -32,29 +33,16 @@ function App() {
       </header>
 
       <div className="App-body">
-        <div className='home'>
-          <p>osdjsojf</p>
-        </div>
 
-
-        <div className='all-list'>
-          {/* <p>Click here to view a list of all plants.</p> */}
-          {/* <Link to ='/plants'>Click here to view a list of all plants.</Link> */}
         </div>
         <Routes>
-          {/* <Route path="/search"  element={<SearchBar />} /> */}
           <Route path="/plants/:plantID" element={<Card plant={listedPlant}/>} /> 
-          {/* {match ? <Card match{match} />} */}
-          {/* <Route exact path='/' element={} /> */}
-          {/* <Route
-            path="/plants/:plantID"
-            render={({ match }) => <Card match={match} other="props" />}
-          /> */}
           <Route path='/plants' element={<AllPlants props={plantlist}/>} />
           <Route path='/search' element={<SearchPage/>} />
           <Route path='/' element={<HomePage/>} />
+          <Route path='/error' element={<Error/>} />
         </Routes>
-      </div>
+
       
     </div>
 
