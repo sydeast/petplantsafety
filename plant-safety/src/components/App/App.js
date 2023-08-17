@@ -8,6 +8,7 @@ import AllPlants from '../Plants/plantlist'
 import Navbar from '../Nav/header';
 import HomePage from '../Home/home';
 import plantlist from '../Plants/plantlist';
+import listedPlant from '../Plants/plantcard'
 import SearchPage from '../SearchBar/searchPage'
 
 function App() {
@@ -42,7 +43,7 @@ function App() {
         </div>
         <Routes>
           {/* <Route path="/search"  element={<SearchBar />} /> */}
-          <Route path="/plant/:plantID" element={<Card props={useMatches}/>} /> 
+          <Route path="/plants/:plantID" element={<Card plant={listedPlant}/>} /> 
           {/* {match ? <Card match{match} />} */}
           {/* <Route exact path='/' element={} /> */}
           {/* <Route
