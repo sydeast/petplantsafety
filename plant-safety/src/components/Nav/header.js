@@ -5,7 +5,7 @@ const Navbar= () =>{
   return (
   <div>
    <nav className='navbar'>
-    <a className='logo-here' href='#'>
+    <a className='logo-here' href='/'>
         Pet Plant Safety
     </a>
     

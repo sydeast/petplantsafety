@@ -17,12 +17,18 @@ const SearchList = (props) => {
   //     {filtered}
   //   </div>
   // );
-  return props.results.map((plant) => {
+  return props.results.map((listedPlant) => {
     return (
-      <div className="plant-wrapper" key={plant.id}>
-        {/* <Link to="/plant/:plantID"><Card plant={plant}/></Link>  */}
+      <div className="plant-wrapper" key={listedPlant.id}>
+        {/* <Link to="/plant/:plantID"><Card plant={listedPlant}/></Link>  */}
+        <Link to={{
+                    pathname:`/plants/${listedPlant.id}`}}
+                    state={{ plant: {listedPlant} }}
+                    >
+                {listedPlant.name}
+        </Link>
    
-        <strong> {plant.name} </strong>
+        {/* <strong> {plant.name} </strong> */}
               
       </div>
 
