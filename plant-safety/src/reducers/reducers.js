@@ -3,7 +3,8 @@ import {SET_PLANT, FIND_PLANTS} from '../actions/actions';
 
 const initialState = {
     searchResults: [],
-    plantsList: []
+    plantsList: [],
+    hasError:''
 };
 
 

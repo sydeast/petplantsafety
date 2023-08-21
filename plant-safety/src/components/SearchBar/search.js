@@ -2,6 +2,8 @@ import React, {Component, useState } from 'react';
 import { connect, useSelector, useDispatch } from 'react-redux';
 import { fetchPlants, searchPlants } from '../../actions/actions';
 import Searchlist from './searchResultsList';
+import { useErrorBoundary } from "react-error-boundary";
+
 
 class Search extends Component {
 
@@ -10,14 +12,14 @@ class Search extends Component {
         this.state = {
             searchTerm: '',
             showSearch: false,
-           searchResults: ''
+  
           }
-        // this.handleToggleClick = this.handleToggleClick.bind(this);
+        this.handleToggleClick = this.handleToggleClick.bind(this);
     }
+
     handleToggleClick() {
         this.setState(state => ({
-          showSearch: true
-        }));
+          showSearch: true        }));
     };
     
     handleChange = e => {
@@ -30,18 +32,19 @@ class Search extends Component {
         e.preventDefault()
         this.props.searchPlants(this.state.searchTerm)
         this.handleToggleClick()
+        
+        
     };
 
     randomKey = Math.floor(Math.random() * 3000);
     
+    
+    
 
     render() {
-   
         return (
             <div className="search-form">
-                <form 
-                    onSubmit={this.handleSubmit}
-                >
+                <form >
                     <h3>
                         <label>
                             What plant would you like to find?
@@ -56,19 +59,27 @@ class Search extends Component {
                             onChange={this.handleChange} 
                             value={this.state.searchTerm}
                             />
-                        <input type="submit" value="search" />
+                        <button onClick={e => 
+                            {
+                                this.handleSubmit(e)
+                                
+                                
+                            }}>Search</button>
                     </p>
                 </form>
-                {/* {{this.state.searchResults}.map(item => */}
+               
                 <div className='resultsSearch'>
-                
-                    <Searchlist results={this.props.plants.searchResults} />
+                 {this.state.showSearch ? 
+
+                 <Searchlist results={this.props.plants.searchResults} /> :
+                 <div>Results will display here</div>
+                 }
                 </div>
-                {/* )} */}
             </div>
-                
+            
 
         );
+
         }
 }
 const mapStateToProps = ({plants}) => ({plants});
